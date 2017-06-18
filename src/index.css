@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #111;
+}
+
+.leftPanel {
+  width: 100%;
+  padding: 20px;
+  padding-right: 300px;
+}
+
+.rightFixedPanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.myArtistsTitle {
+  margin: 0;
+  font-size: 30px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.myArtistsList {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.myArtistsListItem {
+  padding-bottom: 10px;
+}
+
+.smallArtist {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.smallArtistName {
+  padding-left: 10px;
+}
+
+.loadMoreLayout {
+  text-align: center;
+}
+
+.artistsList {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.artistsListItem {
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.noResults {
+  font-size: 2.5em;
+  color: gray;
+  text-align: center;
+}
+
+.searchForm {
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding-right: 100px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.searchButtonLayout {
+  position: absolute;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.searchButton {
+  background: none;
+  border: 0;
+  color: inherit;
+  padding: .5em;
+  cursor: pointer;
+}
+
+.loadMore {
+  background: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.loading {
+  font-size: 2.5em;
+  color: gray;
+  text-align: center;
+}
+
+.centeredContent {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.artist.isSelected {
+  opacity: 0.5;
+}
+
+.artistName {
+  font-size: 1.8em;
+  line-height: 1.2em;
+  margin-top: .2em;
+}
+
+.artistImage {
+  background-size: cover;
+  background-color: black;
+}
