@@ -100,7 +100,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -138,7 +138,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -176,7 +176,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -214,7 +214,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -251,7 +251,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -289,7 +289,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -327,7 +327,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -365,7 +365,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -403,7 +403,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -443,7 +443,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -483,7 +483,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -523,7 +523,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -563,7 +563,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -601,7 +601,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -641,7 +641,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -678,7 +678,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -716,7 +716,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -754,7 +754,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{
@@ -792,7 +792,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="artistsListItem">
-                <div className="artist null">
+                <div className="artist">
                   <div
                     className="artistImage"
                     style={{

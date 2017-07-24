@@ -16,4 +16,4 @@ Podés acceder a la aplicación final iniciando la aplicación con `npm start` (
 
 La primera vez que intentes buscar un artista, la aplicación te redireccionará a una página para darle permisos a la aplicación para acceder a los datos de Spotify. Por como funciona la API de Spotify, esto lo tendrás que hacer cada cierto tiempo. Igualmente esa funcionalidad ya esta implementada, no nos enfocaremos en hacer eso, sino en la UI y las interacciones.
 
-Para comenzar, vamos a ver cómo [dividir nuestra aplicación en componentes](#).
+Para comenzar, vamos a ver cómo [dividir nuestra aplicación en componentes](./01-dividir-en-componentes.md).
