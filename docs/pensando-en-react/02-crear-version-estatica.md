@@ -4,7 +4,7 @@ Una vez que ya tenemos la división en componentes, podemos pasar a crear una im
 
 En esta etapa, vas a estar en un proceso de mucho tipeo, mover código y no tanto pensar, ya que es más bien mecánico el proceso. Una vez que descubras el mecanismo en los primeros 2 o 3 casos, los demás salen de igual forma.
 
-En el repo vas a encontrar el archivo `/src/1/index.js`. Este es el código inicial de este paso.
+En el repo vas a encontrar el archivo `/src/inicio/index.js`. Este es el código inicial de este paso.
 
 En este archivo tenemos un gran componente `App` que encierra toda la UI de nuestra aplicación, escrita en JSX. Podemos ver también que hay un flag `showEmpty` para poder cambiar entre la versión estática del listado de artistas y el estado de "no se encontraron resultados". También hay una función disponible importada que se llama `getArtists` que permite obtener la misma información que se ve en el browser en forma de array, como si viniera de la API. Esto será util para dividir la aplicación en componentes e ir parametrizando el contenido en base al valor de un objeto de ese array.
 

@@ -9,6 +9,35 @@ body {
   color: #111;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.4em;
+  line-height: 1.5em;
+}
+
+.rootList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.rootList > li:before {
+  content: '👉';
+  margin-right: 15px;
+}
+
 .leftPanel {
   width: 100%;
   padding: 20px;
