@@ -6,6 +6,7 @@ import Final from "./final";
 
 import Ex1 from "./fundamentos/01";
 import Ex2 from "./fundamentos/02";
+import Ex3 from "./fundamentos/03";
 // import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 import "./index.css";
@@ -31,7 +32,7 @@ class Ex1Wrapper extends React.Component {
 }
 
 function Foundation({ match }) {
-  const exercises = [Ex1Wrapper, Ex2];
+  const exercises = [Ex1Wrapper, Ex2, Ex3];
 
   return (
     <Switch>
