@@ -1,8 +1,10 @@
 // Modificar el siguiente código para que en lugar de escribir contenido del elemento
 // con `innerHTML`, lo haga con ReactDOM.render.
 //
-// Para esto es necesario crear los elementos de React que representan esa porción
-// de HTML.
+// Para esto tenes que:
+//
+// 1. Convertir el HTML dentro del string a llamadas a React.createElement
+// 2. Utilizar eso en `ReactDOM.render` junto con el `element` pasado como parámetro.
 
 import React from 'react';
 import ReactDOM from 'react-dom';
