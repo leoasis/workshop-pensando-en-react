@@ -5,17 +5,19 @@ import Inicio from "./inicio";
 import Final from "./final";
 
 import Ex1 from "./fundamentos/01";
+import Ex2 from "./fundamentos/02";
 // import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 import "./index.css";
 
 class Ex1Wrapper extends React.Component {
-
   componentDidMount() {
     Ex1(this.el);
   }
 
-  shouldComponentUpdate() { return false; }
+  shouldComponentUpdate() {
+    return false;
+  }
 
   render() {
     return (
@@ -29,7 +31,7 @@ class Ex1Wrapper extends React.Component {
 }
 
 function Foundation({ match }) {
-  const exercises = [Ex1Wrapper];
+  const exercises = [Ex1Wrapper, Ex2];
 
   return (
     <Switch>

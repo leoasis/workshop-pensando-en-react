@@ -78,7 +78,7 @@ Podemos ver que un elemento de React es efectivamente una _descripción_ de un e
 
 ## Ejercicios
 
-Ya estás listo para hacer [los ejercicios](../../src/fundamentos/01.js).
+Ya estás listo para hacer [el ejercicio 1](../../src/fundamentos/01.js).
 
 
 [Siguiente >>](./02-componentes.md)

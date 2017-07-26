@@ -101,7 +101,7 @@ Dado que el `ref` devuelve la instancia del componente, y que los componentes de
 
 ## Ejercicios
 
-Ya estás listo para hacer [los ejercicios](../src/fundamentos/08.js).
+Ya estás listo para hacer [el ejercicio 8](../src/fundamentos/08.js).
 
 
 [Siguiente >>](./09-elementos-de-formulario.md)
