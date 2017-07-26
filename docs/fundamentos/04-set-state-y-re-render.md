@@ -95,3 +95,10 @@ class MiComponente extends React.Component {
 ```
 
 En este ejemplo, estamos actualizando el estado `contador` cada vez que se hace click en los botones de incrementar o decrementar. Utilizamos una función como parámetro de `setState` porque la actualización depende del estado anterior de `contador`.
+
+## Ejercicios
+
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/04.js).
+
+
+[Siguiente >>](./05-eventos.md)

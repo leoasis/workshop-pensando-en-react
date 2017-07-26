@@ -102,6 +102,9 @@ React.createElement(HolaMundo, { mundo: 'Marte', fecha: new Date() });
 Ahora, para qué dos formas de definir componentes? Esta segunda forma nos permite acceder a más funcionalidad que la versión de función. En particular, los componentes tipo clase pueden tener _estado interno_, y tienen acceso a los _eventos del ciclo de vida_ para poder hacer distintas cosas cuando se disparan. Estos dos temas los veremos más adelante.
 
 
-## Ejercicio
+## Ejercicios
 
-Usar aca un ejemplo del ejercicio final?
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/02.js).
+
+
+[Siguiente >>](./03-jsx.md)

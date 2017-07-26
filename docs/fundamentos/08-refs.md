@@ -98,3 +98,10 @@ En este ejemplo creamos un componente `CampoTexto` que encierra el `input`. Util
 ## refs y componentes tipo función
 
 Dado que el `ref` devuelve la instancia del componente, y que los componentes de tipo función no tienen una instancia asociada, **no podemos usar `ref`s en componentes de tipo función**.
+
+## Ejercicios
+
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/08.js).
+
+
+[Siguiente >>](./09-elementos-de-formulario.md)

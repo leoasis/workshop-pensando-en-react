@@ -81,3 +81,10 @@ function Artists() {
 ```
 
 Es por estos errores sutiles, que React recomienda _SIEMPRE_ asignar una `key` cuando dibujamos listas de elementos.
+
+## Ejercicios
+
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/06.js).
+
+
+[Siguiente >>](./07-ciclo-de-vida.md)

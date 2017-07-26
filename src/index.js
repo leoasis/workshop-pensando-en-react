@@ -3,23 +3,55 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Inicio from "./inicio";
 import Final from "./final";
+
+import Ex1 from "./fundamentos/01";
 // import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 import "./index.css";
 
-function Foundation() {
+class Ex1Wrapper extends React.Component {
+
+  componentDidMount() {
+    Ex1(this.el);
+  }
+
+  shouldComponentUpdate() { return false; }
+
+  render() {
+    return (
+      <div
+        ref={el => {
+          this.el = el;
+        }}
+      />
+    );
+  }
+}
+
+function Foundation({ match }) {
+  const exercises = [Ex1Wrapper];
+
   return (
-    <div className="root">
-      <h1>Workshop: Fundamentos</h1>
-      <ul className="rootList">
-        <li>
-          <Link to="/fundamentos/1">Ejercicio 1</Link>
-        </li>
-        <li>
-          <Link to="/fundamentos/2">Ejercicio 2</Link>
-        </li>
-      </ul>
-    </div>
+    <Switch>
+      {exercises.map((ex, index) =>
+        <Route key={index} path={`/fundamentos/${index + 1}`} component={ex} />
+      )}
+      <Route
+        render={() =>
+          <div className="root">
+            <h1>Workshop: Fundamentos</h1>
+            <ul className="rootList">
+              {exercises.map((ex, index) =>
+                <li key={index}>
+                  <Link to={`/fundamentos/${index + 1}`}>
+                    Ejercicio {index + 1}
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </div>}
+      />
+    </Switch>
   );
 }
 
@@ -47,25 +79,7 @@ ReactDOM.render(
     ? <Final />
     : <BrowserRouter>
         <Switch>
-          <Route
-            path="/fundamentos"
-            render={() =>
-              <Switch>
-                <Route
-                  path="/fundamentos/1"
-                  render={() => <div>Ejericio 1</div>}
-                />
-                <Route
-                  path="/fundamentos/2"
-                  render={() => <div>Ejericio 2</div>}
-                />
-                <Route
-                  path="/fundamentos/3"
-                  render={() => <div>Ejericio 3</div>}
-                />
-                <Route component={Foundation} />
-              </Switch>}
-          />
+          <Route path="/fundamentos" component={Foundation} />
           <Route path="/inicio" component={Inicio} />
           <Route path="/final" component={Final} />
           <Route component={Root} />

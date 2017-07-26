@@ -87,3 +87,10 @@ class MiComponente extends React.Component {
 Se dispara cuando el componente se está por quitar de la UI. Es útil para "limpiar lo que ensuciamos". Si agregamos event listeners o llamadas a `setTimeout` o `setInterval`, es eliminar esos listeners y llamar a `clearTimeout` o `clearInterval`. También aquí deberíamos cancelar las llamadas remotas que aún no hayan terminado.
 
 Si utilizamos algun plugin de jQuery o alguna librería que utiliza el DOM y requiere liberar recursos, aquí debe ser llamada.
+
+## Ejercicios
+
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/07.js).
+
+
+[Siguiente >>](./08-refs.md)

@@ -25,7 +25,33 @@ import React from 'react';
 const el = React.createElement('h1', { title: 'Saludo al mundo' }, 'Hola mundo!');
 ```
 
-Esta función recibe 3 parámetros. El primer parámetro es el tipo de elemento que queremos crear. En este caso es un _string_, y puede ser cualquier tipo de elemento de DOM válido. Esto define que tipo de elemento queremos que se dibuje. El segundo parámetro se llama `props`, y es un objeto que define las propiedades de este elemento. Al describir un elemento de DOM, estas propiedades se corresponden con los atributos y propiedades que un elemento puede tener en el DOM, como `title`, `className`, `style`, `href`, etc. El tercer parámetro es el _contenido_ del elemento. Es decir, contenido que será hijo del elemento que definimos. Este contenido puede ser del tipo que queramos, incluso otros elementos.
+y para renderizarlo en el DOM lo usamos en el código de arriba:
+
+```js
+import ReactDOM from 'react-dom';
+import React from 'react';
+
+const container = document.getElementById('app');
+const el = React.createElement('h1', { title: 'Saludo al mundo' }, 'Hola mundo!');
+
+ReactDOM.render(el, container);
+```
+
+`React.createElement` recibe 3 parámetros. El primer parámetro es el tipo de elemento que queremos crear. En este caso es un _string_, y puede ser cualquier tipo de elemento de DOM válido. Esto define que tipo de elemento queremos que se dibuje. El segundo parámetro se llama `props`, y es un objeto que define las propiedades de este elemento. Al describir un elemento de DOM, estas propiedades se corresponden con los atributos y propiedades que un elemento puede tener en el DOM, como `title`, `className`, `style`, `href`, etc. El tercer parámetro (y los siguientes, ya que acepta cualquier cantidad de parámetros al final) es el _contenido_ del elemento. Es decir, contenido que será hijo del elemento que definimos. Este contenido puede ser del tipo que queramos, incluso otros elementos:
+
+```js
+import React from 'react';
+
+const el = React.createElement('div', { style: { backgroundColor: 'green' },
+  React.createElement('h1', { title: 'Saludo al mundo' }, 'Hola mundo!'),
+  React.createElement('p', null,
+    'Esto es un ejemplo',
+    React.createElement('a', { href: 'http://google.com/' }, 'Y esto un link')
+  )
+);
+```
+
+> Algo a tener en cuenta en las `props` (el segundo parámetro), es que esas propiedades _corresponden a las propiedades de los elementos de DOM, y NO de los atributos_. Es decir, que `style` es un objeto en lugar de ser un string de css como en HTML, con sus propiedades sin guion y con mayúsculas en las uniones de las palabras. También se usa `className` en lugar de `class`, ya que `className` es la propiedad en el DOM, y no el atributo de HTML. Para más información en las diferencias, podes leer [esta parte de la documentación oficial](https://facebook.github.io/react/docs/dom-elements.html).
 
 Qué devuelve `React.createElement`? La representación del elemento. Es simplemente un objeto de Javascript con propiedades. Veamos como se ve:
 
@@ -50,10 +76,9 @@ Hay muchas propiedades internas a React pero realmente las que nos importan ahor
 
 Podemos ver que un elemento de React es efectivamente una _descripción_ de un elemento del DOM, y además es simplemente un objeto de Javascript. Como tal podemos manipularlo como cualquier otro objeto: guardarlo como una variable, pasarlo por parámetro a una función, guardarlo en una lista o como propiedad de otro objeto, etc.
 
-## Ejemplos
-
-Escribir ejemplos usando href, className y style y explicar
-
 ## Ejercicios
 
-Link a los ejercicios
+Ya estás listo para hacer [los ejercicios](../../src/fundamentos/01.js).
+
+
+[Siguiente >>](./02-componentes.md)

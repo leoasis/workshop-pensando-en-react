@@ -46,3 +46,10 @@ Aquí definimos un "evento" `onSelect` que se dispara cuando se hace click en el
 ## Eventos disponibles del DOM
 
 Para saber con más detalle qué eventos tenemos disponibles en React, te recomiendo que [la documentación oficial que habla sobre los eventos](https://facebook.github.io/react/docs/events.html).
+
+## Ejercicios
+
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/05.js).
+
+
+[Siguiente >>](./06-listas.md)

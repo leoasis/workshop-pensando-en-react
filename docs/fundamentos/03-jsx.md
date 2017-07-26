@@ -61,3 +61,10 @@ Para más información sobre la sintaxis de JSX, te recomiendo que leas esta pá
 Si JSX no es Javascript estándar, cómo lo podemos utilizar en los navegadores? Para esto utilizamos la libreria [Babel](http://babeljs.io) que, entre otras cosas, convierte JSX a Javascript estándar (transformándo el JSX a llamadas a `React.createElement`) para que lo podamos utilizar en los navegadores.
 
 En los ejercicios del Workshop, ya tenemos Babel y ya estará correctamente configurado para entender JSX. Cuando hagas tu propia app, te recomiendo que utilices [create-react-app](https://github.com/facebookincubator/create-react-app), que entre otras cosas también te configura Babel para poder usar JSX sin que tengas que hacer nada. De hecho, el codigo del workshop se creó con `create-react-app`!
+
+## Ejercicios
+
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/03.js).
+
+
+[Siguiente >>](./04-set-state-y-re-render.md)

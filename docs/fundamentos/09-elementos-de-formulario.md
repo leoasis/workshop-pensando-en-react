@@ -95,3 +95,10 @@ Para que efectivamente el valor cambie, ya que esta dictado por el valor que gua
 Podemos ver en este modo, que aunque requiere mas código, nos permite ver el flujo del estado de forma más clara con solo mirar el `render`. También nos da la oportunidad de manipular, interrumpir y formatear el estado, ya que tenemos control del mismo.
 
 Si bien es el modo que deberías usar en la mayoría de los casos, no está mal tampoco que quieras utilizar el modo no controlado en ciertos casos donde creas conveniente.
+
+## Ejercicios
+
+Ya estás listo para hacer [los ejercicios](../src/fundamentos/09.js).
+
+
+[Siguiente >>](./10-outro.md)
