@@ -78,7 +78,9 @@ function Foundation({ match }) {
                 <b>/src/fundamentos/{exNumber(index)}.js</b>. Abrilo en tu
                 editor de texto.
               </div>
-              <Ex {...props} />
+              <div style={{ padding: 10 }}>
+                <Ex {...props} />
+              </div>
             </div>}
         />
       )}
