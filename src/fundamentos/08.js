@@ -13,6 +13,7 @@
 
 import React from "react";
 
+/* eslint-disable jsx-a11y/accessible-emoji */
 // El siguiente export fue agregado para poder correr este ejercicio dentro del proyecto general.
 export default class Ejercicio8 extends React.Component {
   componentDidMount() {
@@ -63,3 +64,4 @@ class FancyParagraph extends React.Component {
     );
   }
 }
+/* eslint-enable jsx-a11y/accessible-emoji */
