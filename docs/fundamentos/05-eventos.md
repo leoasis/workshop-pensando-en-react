@@ -49,7 +49,7 @@ Para saber con más detalle qué eventos tenemos disponibles en React, te recomi
 
 ## Ejercicios
 
-Ya estás listo para hacer [el ejercicio 5](../src/fundamentos/05.js).
+Ya estás listo para hacer [el ejercicio 5](../../src/fundamentos/05.js).
 
 
 [Siguiente >>](./06-listas.md)

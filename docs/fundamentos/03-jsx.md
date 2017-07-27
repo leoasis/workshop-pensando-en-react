@@ -64,7 +64,7 @@ En los ejercicios del Workshop, ya tenemos Babel y ya estará correctamente conf
 
 ## Ejercicios
 
-Ya estás listo para hacer [el ejercicio 3](../src/fundamentos/03.js).
+Ya estás listo para hacer [el ejercicio 3](../../src/fundamentos/03.js).
 
 
 [Siguiente >>](./04-set-state-y-re-render.md)

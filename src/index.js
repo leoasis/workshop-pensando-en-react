@@ -7,6 +7,7 @@ import Final from "./final";
 import Ex1 from "./fundamentos/01";
 import Ex2 from "./fundamentos/02";
 import Ex3 from "./fundamentos/03";
+import Ex6 from "./fundamentos/06";
 // import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 import "./index.css";
@@ -32,7 +33,7 @@ class Ex1Wrapper extends React.Component {
 }
 
 function Foundation({ match }) {
-  const exercises = [Ex1Wrapper, Ex2, Ex3];
+  const exercises = [Ex1Wrapper, Ex2, Ex3, null, null, Ex6, null, null, null];
 
   return (
     <Switch>
@@ -64,7 +65,7 @@ function Root() {
       <h1>Workshop: Pensando en React</h1>
       <ul className="rootList">
         <li>
-          <Link to="/fundamentos">Fundamentos</Link>
+          <Link to="/fundamentos">Ejercicios de los Fundamentos</Link>
         </li>
         <li>
           <Link to="/inicio">Versión inicial (estática) de la aplicación</Link>

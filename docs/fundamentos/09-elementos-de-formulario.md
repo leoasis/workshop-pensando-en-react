@@ -98,7 +98,7 @@ Si bien es el modo que deberías usar en la mayoría de los casos, no está mal 
 
 ## Ejercicios
 
-Ya estás listo para hacer [el ejercicio 9](../src/fundamentos/09.js).
+Ya estás listo para hacer [el ejercicio 9](../../src/fundamentos/09.js).
 
 
 [Siguiente >>](./10-outro.md)
