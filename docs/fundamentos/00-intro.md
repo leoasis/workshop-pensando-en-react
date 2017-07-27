@@ -4,7 +4,7 @@ En esta sección aprendemos los fundamentos de React. Arrancamos por los concept
 
 Para que estos conceptos se asienten, en cada una de las lecciones vamos a estar haciendo algunos ejercicios, que podes encontrar en la carpeta `src/fundamentos` del proyecto instalado. Utilizá el editor de texto que más te guste para abrirlo.
 
-Al levantar el servidor vas ver el resultado del código corriendo de cada ejercicio en la página principal (http://localhost:3000) yendo a la opción de "Fundamentos".
+Al levantar el servidor vas ver el resultado del código corriendo de cada ejercicio en la página principal (http://localhost:3000) yendo a la opción de "Ejercicios de los Fundamentos".
 
 ## Usando React en este repositorio
 

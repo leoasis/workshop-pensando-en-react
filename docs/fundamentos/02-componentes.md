@@ -104,7 +104,7 @@ Ahora, para qué dos formas de definir componentes? Esta segunda forma nos permi
 
 ## Ejercicios
 
-Ya estás listo para hacer [el ejercicio 2](../../src/fundamentos/02.js).
+Ya estás listo para hacer [el ejercicio 2](http://localhost:3000/fundamentos/2).
 
 
 [Siguiente >>](./03-jsx.md)

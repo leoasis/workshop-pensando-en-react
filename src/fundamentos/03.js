@@ -64,7 +64,8 @@ class Artist extends React.Component {
   }
 }
 
-export default function App() {
+// El siguiente export fue agregado para poder correr este ejercicio dentro del proyecto general.
+export default function Ejercicio3() {
   const artist = {
     name: 'The Beatles',
     followers: 3443835,

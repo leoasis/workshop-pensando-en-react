@@ -3,18 +3,17 @@
 //
 // Para esto tenes que:
 //
-// 1. Abrir el archivo src/fundamentos/01.js desde tu editor de texto
-// 2. Convertir el HTML dentro del string a llamadas a React.createElement.
+// 1. Convertir el HTML dentro del string a llamadas a React.createElement.
 //    Recordá que podes usar variables para guardar los elementos de React a medida
 //    que los vas convirtiendo.
-// 3. Utilizar el resultado en `ReactDOM.render` junto con el `element` pasado como
+// 2. Utilizar el resultado en `ReactDOM.render` junto con el `element` pasado como
 //    parámetro.
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// La siguiente línea de código fue agregada para poder correr este ejercicio dentro del proyecto general.
-export default function ex1(element) {
+// El siguiente export fue agregado para poder correr este ejercicio dentro del proyecto general.
+export default function ejercicio1(element) {
   element.innerHTML = `
     <div class="artist">
       <div class="artistImage" style="width: 200px; height: 200px; border-radius: 200px; background-image: url('https://i.scdn.co/image/197cff807611777427c93258f0a1ccdf6b013b09');">

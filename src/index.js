@@ -7,38 +7,80 @@ import Final from "./final";
 import Ex1 from "./fundamentos/01";
 import Ex2 from "./fundamentos/02";
 import Ex3 from "./fundamentos/03";
+import Ex4 from "./fundamentos/04";
+import Ex5 from "./fundamentos/05";
 import Ex6 from "./fundamentos/06";
+import Ex7 from "./fundamentos/07";
+import Ex8 from "./fundamentos/08";
+import Ex9 from "./fundamentos/09";
 // import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 import "./index.css";
 
-class Ex1Wrapper extends React.Component {
-  componentDidMount() {
-    Ex1(this.el);
-  }
+function exWithDOMElement(ex) {
+  return class ExWrapper extends React.Component {
+    componentDidMount() {
+      ex(this.el);
+    }
 
-  shouldComponentUpdate() {
-    return false;
-  }
+    shouldComponentUpdate() {
+      return false;
+    }
 
-  render() {
-    return (
-      <div
-        ref={el => {
-          this.el = el;
-        }}
-      />
-    );
-  }
+    render() {
+      return (
+        <div
+          ref={el => {
+            this.el = el;
+          }}
+        />
+      );
+    }
+  };
+}
+
+function exNumber(index) {
+  const num = index + 1;
+  return num < 10 ? "0" + num : String(num);
 }
 
 function Foundation({ match }) {
-  const exercises = [Ex1Wrapper, Ex2, Ex3, null, null, Ex6, null, null, null];
+  const exercises = [
+    exWithDOMElement(Ex1),
+    Ex2,
+    Ex3,
+    Ex4,
+    Ex5,
+    Ex6,
+    Ex7,
+    Ex8,
+    Ex9
+  ];
 
   return (
     <Switch>
-      {exercises.map((ex, index) =>
-        <Route key={index} path={`/fundamentos/${index + 1}`} component={ex} />
+      {exercises.map((Ex, index) =>
+        <Route
+          key={index}
+          path={`/fundamentos/${index + 1}`}
+          render={props =>
+            <div>
+              <div
+                style={{
+                  background: "#e0e0e0",
+                  padding: 10,
+                  fontSize: ".8em",
+                  marginBottom: 5,
+                  fontStyle: "italic"
+                }}
+              >
+                El archivo que corresponde a este ejercicio es{" "}
+                <b>/src/fundamentos/{exNumber(index)}.js</b>. Abrilo en tu
+                editor de texto.
+              </div>
+              <Ex {...props} />
+            </div>}
+        />
       )}
       <Route
         render={() =>

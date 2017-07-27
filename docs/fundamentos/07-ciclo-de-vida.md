@@ -90,7 +90,7 @@ Si utilizamos algun plugin de jQuery o alguna librería que utiliza el DOM y req
 
 ## Ejercicios
 
-Ya estás listo para hacer [el ejercicio 7](../../src/fundamentos/07.js).
+Ya estás listo para hacer [el ejercicio 7](http://localhost:3000/fundamentos/7).
 
 
 [Siguiente >>](./08-refs.md)

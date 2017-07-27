@@ -84,7 +84,7 @@ Es por estos errores sutiles, que React recomienda _SIEMPRE_ asignar una `key` c
 
 ## Ejercicios
 
-Ya estás listo para hacer [el ejercicio 6](../../src/fundamentos/06.js).
+Ya estás listo para hacer [el ejercicio 6](http://localhost:3000/fundamentos/6).
 
 
 [Siguiente >>](./07-ciclo-de-vida.md)

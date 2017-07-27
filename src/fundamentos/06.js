@@ -13,7 +13,8 @@
 
 import React from "react";
 
-export default class App extends React.Component {
+// El siguiente export fue agregado para poder correr este ejercicio dentro del proyecto general.
+export default class Ejercicio6 extends React.Component {
   constructor() {
     super();
 

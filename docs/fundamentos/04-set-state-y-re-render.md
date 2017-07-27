@@ -98,7 +98,7 @@ En este ejemplo, estamos actualizando el estado `contador` cada vez que se hace 
 
 ## Ejercicios
 
-Ya estás listo para hacer [el ejercicio 4](../../src/fundamentos/04.js).
+Ya estás listo para hacer [el ejercicio 4](http://localhost:3000/fundamentos/4).
 
 
 [Siguiente >>](./05-eventos.md)

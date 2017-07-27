@@ -14,7 +14,8 @@
 
 import React from 'react';
 
-export default function App() {
+// El siguiente export fue agregado para poder correr este ejercicio dentro del proyecto general.
+export default function Ejercicio2() {
   const artist = {
     name: 'The Beatles',
     followers: 3443835,
