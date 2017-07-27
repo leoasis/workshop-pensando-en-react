@@ -5,8 +5,9 @@ La idea de este Workshop es aprender a usar y pensar en React mientras hacemos u
 ## Presentación
 Podes ver la presentación en el siguiente [link](https://slides.com/leonardogarciacrespo/pensando-en-react)
 
-## Instalación
+## Setup
 
+### Instalación
 Usando `npm`
 
 ```bash
@@ -28,6 +29,12 @@ yarn start
 Esto va a levantar un [servidor](http://localhost:3000) y va a abrir una ventana del navegador con la pagina inicial.
 
 Desde allí se puede navegar a los ejercicios de los fundamentos, o a las versiones inicial y final de la aplicación.
+
+### React Devtools:
+* Instalar [React Devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) en Chrome
+
+### Spotify:
+* Para poder utilizar la aplicación necesitas tener una cuenta de [Spotify](https://www.spotify.com/ar) (no hace falta que sea Premium) si todavía no tenes una. 
 
 ## Contenido
 

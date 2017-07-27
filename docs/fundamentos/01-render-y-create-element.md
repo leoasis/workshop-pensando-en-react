@@ -77,8 +77,6 @@ Hay muchas propiedades internas a React pero realmente las que nos importan ahor
 Podemos ver que un elemento de React es efectivamente una _descripción_ de un elemento del DOM, y además es simplemente un objeto de Javascript. Como tal podemos manipularlo como cualquier otro objeto: guardarlo como una variable, pasarlo por parámetro a una función, guardarlo en una lista o como propiedad de otro objeto, etc.
 
 ## Ejercicios
-
 Ya estás listo para hacer [el ejercicio 1](../../src/fundamentos/01.js).
-
 
 [Siguiente >>](./02-componentes.md)

@@ -1,8 +1,10 @@
 # 00 - Intro
 
-En esta sección vamos a estar aprendiendo los fundamentos de React. Vamos a ir por los conceptos básicos que vamos a necesitar para crear nuestra aplicación.
+En esta sección aprendemos los fundamentos de React. Arrancamos por los conceptos básicos que necesitamos para crear nuestra aplicación.
 
-Para que estos conceptos se asienten, en cada una de las lecciones vamos a estar haciendo algunos ejercicios. Estos ejercicios los podés acceder desde la página principal cuando se levanta el servidor, yendo a la opción de "Fundamentos".
+Para que estos conceptos se asienten, en cada una de las lecciones vamos a estar haciendo algunos ejercicios, que podes encontrar en la carpeta `src/fundamentos` del proyecto instalado. Utilizá el editor de texto que más te guste para abrirlo.
+
+Al levantar el servidor vas ver el resultado del código corriendo de cada ejercicio en la página principal (http://localhost:3000) yendo a la opción de "Fundamentos".
 
 ## Usando React en este repositorio
 
