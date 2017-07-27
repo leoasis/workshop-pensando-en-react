@@ -13,7 +13,6 @@
 
 import React from "react";
 
-/* eslint-disable jsx-a11y/accessible-emoji */
 // El siguiente export fue agregado para poder correr este ejercicio dentro del proyecto general.
 export default class Ejercicio8 extends React.Component {
   componentDidMount() {
@@ -24,7 +23,12 @@ export default class Ejercicio8 extends React.Component {
     return (
       <div>
         <input placeholder="Yo me debería auto enfocar" size={30} />
-        <FancyParagraph>Yo debería moverme hacia 👉</FancyParagraph>
+        <FancyParagraph>
+          Yo debería moverme hacia{" "}
+          <span role="img" aria-label="allá">
+            👉
+          </span>
+        </FancyParagraph>
       </div>
     );
   }
@@ -58,10 +62,12 @@ class FancyParagraph extends React.Component {
             opacity: this.state.animated ? 1 : 0
           }}
         >
-          (Bravo!! 👏👏👏)
+          (Bravo!!{" "}
+          <span role="img" aria-label="aplausos">
+            👏👏👏
+          </span>)
         </span>
       </p>
     );
   }
 }
-/* eslint-enable jsx-a11y/accessible-emoji */
