@@ -1,5 +1,8 @@
 # 04 - Dónde debe vivir el estado
 
+> Este paso requiere que hayas completado los siguientes fundamentos, además de los del paso anterior:
+> 1. [Manejo de Estado (setState y re-render)](../fundamentos/04-set-state-y-re-render.md)
+
 Muy bien, ahora que identificamos el estado de nuestra aplicación, es momento de decidir dónde debe vivir ese estado. Nos referimos en este caso a qué componentes son los que deben ser dueños de ese estado, es decir, en qué componentes vamos a tener esa información como estado local, con `this.state`.
 
 La clave de todo esto es entender que en React modelamos el flujo de nuestros datos en forma unidireccional. Es decir, los datos viajan _hacia abajo_ en el árbol de componentes. Ya lo vimos con las `props` en los pasos anteriores: nuestra aplicación consiste en ir creando componentes e ir pasando la información como parámetro a esos componentes, cada vez mas granular y específica para los componentes que se encuentran más adentro en el árbol.

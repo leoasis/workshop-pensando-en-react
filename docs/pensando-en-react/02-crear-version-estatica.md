@@ -1,10 +1,16 @@
 # 02 - Crear Versión Estática
 
+> Este paso requiere que hayas completado los siguientes fundamentos:
+> 1. [Render y Create Element](../fundamentos/01-render-y-create-element.md)
+> 2. [Componentes](../fundamentos/02-componentes.md)
+> 3. [JSX](../fundamentos/03-jsx.md)
+> 6. [Listas](../fundamentos/06-listas.md)
+
 Una vez que ya tenemos la división en componentes, podemos pasar a crear una implementación estática de nuestra aplicación. La idea es convertir el HTML que representa un estado estático de nuestra aplicación, en un árbol de componentes de React que se dibujan en base a `props`.
 
-En esta etapa, vas a estar en un proceso de mucho tipeo, mover código y no tanto pensar, ya que es más bien mecánico el proceso. Una vez que descubras el mecanismo en los primeros 2 o 3 casos, los demás salen de igual forma.
+En esta etapa, vas a estar tipeando mucho, moviendo código y no tanto pensando, ya que es más bien mecánico el proceso. Una vez que descubras el mecanismo en los primeros 2 o 3 casos, los demás salen de igual forma y más rápido.
 
-En el repo vas a encontrar el archivo `/src/inicio/index.js`. Este es el código inicial de este paso.
+En el repo vas a encontrar el archivo `/src/inicio/index.js`. Este es el código que vas a estar modificando al hacer la aplicación.
 
 En este archivo tenemos un gran componente `App` que encierra toda la UI de nuestra aplicación, escrita en JSX. Podemos ver también que hay un flag `showEmpty` para poder cambiar entre la versión estática del listado de artistas y el estado de "no se encontraron resultados". También hay una función disponible importada que se llama `getArtists` que permite obtener la misma información que se ve en el browser en forma de array, como si viniera de la API. Esto será util para dividir la aplicación en componentes e ir parametrizando el contenido en base al valor de un objeto de ese array.
 
@@ -19,7 +25,13 @@ Creamos dos componentes, `ArtistsPanel` y `CollectionPanel`, donde el primero es
 function ArtistsPanel() {
   return (
     <div>
-      {/* Todo el contenido interno de este div aquí */}
+      <form className="searchForm">
+        {/* ... */}
+      </form>
+      <div className="artistsList">
+        {/* ... */}
+      </div>
+      {/* ... */}
     </div>
   )
 }
@@ -27,7 +39,13 @@ function ArtistsPanel() {
 function CollectionsPanel() {
   return (
     <div>
-      {/* Todo el contenido interno de este div aquí */}
+      <h2 className="myArtistsTitle">
+        Mis Artistas (2)
+      </h2>
+      <ul className="myArtistsList">
+        {/* ... */}
+      </ul>
+      {/* ... */}
     </div>
   )
 }
@@ -149,13 +167,14 @@ Podemos ver como vamos reduciendo el código final y vamos reusando estructuras 
 
 Si te aparece un error en la consola del navegador indicando que te falta agregar la `key` en un componente, probablemente necesites asignarlo en este paso, donde iteramos por la lista de artistas y creamos elementos `div` para cada uno. Esos `div` necesitan una `key`, [como vimos en los fundamentos](../fundamentos/06-listas.md).
 
-También no olvides guardar una lista de artistas seleccionados, de forma que puedas asginar la clase `isSelected` al `div` de `className="artist"` dependiendo si el artista está seleccionado o no. Por ahora no tenemos el mecanismo de seleccionar artistas, pero podemos recibir una `prop` en el componente `Artist` que indique si el artista esta seleccionado o no, y en base a eso poner o no esa clase. Luego en `ArtistsPanel`, donde obtuvimos la lista de artistas a partir de `getArtists`, podemos crear una lista de artistas seleccionados y propagarla por los componentes via `props` hasta el componente `Artist`:
+También no olvides guardar una lista de artistas seleccionados, de forma que puedas asignar la clase `isSelected` al `div` de `className="artist"` dependiendo si el artista está seleccionado o no. Por ahora no tenemos el mecanismo de seleccionar artistas, pero podemos recibir una `prop` en el componente `Artist` que indique si el artista esta seleccionado o no, y en base a eso poner o no esa clase. Luego en `ArtistsPanel`, donde obtuvimos la lista de artistas a partir de `getArtists`, podemos crear una lista de artistas seleccionados y propagarla por los componentes via `props` hasta el componente `Artist`:
 
 
 ```jsx
 function ArtistsPanel() {
   const artists = getArtists();
-  const selectedArtists = [];
+  // Seleccionamos algunos artistas
+  const selectedArtists = [artists[0], artists[2]];
   return (
     <div>
       <SearchInput />

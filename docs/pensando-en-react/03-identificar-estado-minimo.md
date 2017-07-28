@@ -1,10 +1,12 @@
 # 03 - Identificar el estado mínimo de nuestra aplicación
 
-Hasta ahora tenemos nuestra aplicación completamente estática pero que depende de ciertos valores que luego se pasan como `props` por el resto de los componentes, y mientras cambie esos valores, la UI cambiará para reflejar ese nuevo valor.
+> Este paso no requiere que hayas completado ningún, fundamento además de los del paso anterior.
+
+Hasta ahora tenemos nuestra aplicación completamente estática pero que depende de ciertos valores que luego se pasan como `props` por el resto de los componentes, y mientras cambie esos valores, la UI cambiará para reflejar ese nuevo valor. Podés probar esto mismo (si no lo hiciste en el paso anterior) ahora con distintos valores de props.
 
 Ahora este paso es identificar dónde debe vivir el estado de nuestra aplicación. Es decir, debemos ver que datos son los necesarios para dibujar nuestra UI. Este grupo de datos, debe ser una representación mínima, pero completa, de todo lo que puede modificarse en nuestra aplicación.
 
-Qué queremos decir por mínima? Que tenemos que identificar que datos son los que no se pueden calcular o derivar de otros datos. Por ejemplo, la cantidad de artistas seleccionados no sería parte del estado, ya que si tenemos el listado de artistas seleccionados, podemos calcular la cantidad preguntando por el tamaño de la lista. Por otro lado, todo el estado que no cambia en el tiempo, no es estado. Podemos guardarlo como estado si queremos, pero también podríamos guardarlo como una constante, o como una variable dentro de algún componente directamente.
+Qué queremos decir por mínima? Que tenemos que identificar qué datos son los que no se pueden calcular o derivar de otros datos. Por ejemplo, la cantidad de artistas seleccionados no sería parte del estado, ya que si tenemos el listado de artistas seleccionados, podemos calcular la cantidad preguntando por el tamaño de la lista. Por otro lado, todo el estado que no cambia en el tiempo, no es estado. Podemos guardarlo como estado si queremos, pero también podríamos guardarlo como una constante, o como una variable dentro de algún componente directamente.
 
 Para nuestro caso concreto, seguramente la lista de artistas sea parte de ese estado. Debemos tener en algún lado la lista de artistas para poder pasarla por los componentes necesarios para que la dibujen. Pero, hay mas información que necesitamos?
 

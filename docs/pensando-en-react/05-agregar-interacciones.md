@@ -1,5 +1,12 @@
 # 05 - Agregar interacciones
 
+> Este paso requiere que hayas completado los siguientes fundamentos, además de los del paso anterior:
+1. [Eventos](../fundamentos/05-eventos.md)
+2. [Ciclo de vida de los componentes](../fundamentos/07-ciclo-de-vida.md)
+3. [Refs](../fundamentos/08-refs.md)
+4. [Elementos de formulario](../fundamentos/09-elementos-de-formulario.md)
+5. [Outro](../fundamentos/10-outro.md)
+
 Hasta ahora con React, todo fue dividir en componentes y enviar datos hacia abajo en en árbol de componentes. Una idea muy simple que nos permitió crear el 80% de nuestra aplicación.
 
 Ahora llegó el momento de agregar las interacciones, y en este caso vamos a tener que revertir el flujo de datos. Con las interacciones, los datos viajan desde los componentes de más abajo (donde se originan las interacciones o eventos), hacia arriba, donde están los componentes con estado, y en respuesta a esa interacción se actualiza el estado.

@@ -1,5 +1,7 @@
 # 01 - Dividir la aplicación en componentes
 
+> Este paso no requiere que hayas completado ningún, fundamento.
+
 El primer paso para crear nuestra aplicación es analizar y diseñar cómo vamos a dividir la UI en componentes.
 
 En general vamos a arrancar con un mock o un diseño previo de nuestra aplicación, pero en nuestro caso como ya tenemos la versión final, podemos usar esto como mock.
