@@ -55,11 +55,43 @@ class MiComponente extends React.Component {
 }
 ```
 
-El `state` debe ser un objeto, pero las propiedades que definimos en ese objeto pueden ser del tipo que querramos. Al igual que las `props`, podemos acceder a `this.state` en el `render` del componente, para utilizar la información en el estado para dibujar. También en este caso, es importante aclarar que React espera que tratemos al `state` como sólo lectura en el `render`. Si modificamos el estado allí, dependiendo de cuando React quiera redibujar el componente estaremos viendo UI que quizás sea incorrecta, producto de la mutación del estado dentro de esa función.
+El `state` debe ser un objeto, pero las propiedades que definimos en ese objeto pueden ser del tipo que querramos. Al igual que las `props`, podemos acceder a `this.state` en el `render` del componente, para utilizar la información en el estado para dibujar. También en este caso, es importante aclarar que React espera que tratemos al `state` como sólo lectura en el `render`. Si modificamos el estado allí, dependiendo de cuando React quiera redibujar el componente estaremos viendo UI que quizás sea incorrecta, [producto de la mutación](https://medium.com/entendiendo-javascript/wip-immutabilidad-en-javascript-todo-a-cambiado-d3d4dc3f997) del estado dentro de esa función.
+
+```js
+class MiComponente extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      contador: 0
+    };
+  }
+  render() {
+    return <div>El contador es {this.state.contador}</div>
+  }
+}
+```
 
 El estado debemos modificarlo sólo a partir de eventos del usuario, o en alguno de los eventos del ciclo de vida permitidos. Estos dos temas los veremos en los próximos fundamentos.
 
-Finalmente, para poder modificar el estado, tampoco debemos hacerlo directamente modificando `this.state` o alguna de sus propiedades. Para que React sea capaz de detectar el cambio y redibujar el componente, debemos utilizar un método de la clase que se llama `setState`. Este método recibe un objeto como parámetro que es el nuevo estado. No es necesario que definamos todas las propiedades del estado en este objeto, solo con definir las propiedades _que cambian_ es suficiente, React hará un _merge_ de este nuevo objeto con el estado actual. También hay otra forma de utilizar el `setState` que es pasandole una función por parámetro. Esta funcion recibe el estado actual y debe devolver el siguiente estado. Esta forma es útil cuando tenemos que actualizar el estado dependiendo de un valor anterior.
+Finalmente, para poder modificar el estado, tampoco debemos hacerlo directamente modificando `this.state` o alguna de sus propiedades. Para que React sea capaz de detectar el cambio y redibujar el componente, debemos utilizar un método de la clase que se llama `setState`. 
+
+```js
+  this.setState({ 
+    propiedad: valor
+  })
+```
+
+Este método recibe un objeto como parámetro que es el nuevo estado. 
+
+```js
+  this.setState((prevState) => ({
+    contador: prevState.contador + 1
+  })
+```
+
+En este ejemplo utilizamos las [arrow functions de ES6](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions).
+
+No es necesario que definamos todas las propiedades del estado en este objeto, solo con definir las propiedades _que cambian_ es suficiente, React hará un _merge_ de este nuevo objeto con el estado actual. También hay otra forma de utilizar el `setState` que es pasandole una función por parámetro. Esta funcion recibe el estado actual y debe devolver el siguiente estado. Esta forma es útil cuando tenemos que actualizar el estado dependiendo de un valor anterior.
 
 Es importante aclarar que el método `setState` es asincrónico. Es decir, no modifica el `state` inmediatamente, sino que React lo hará en algún momento posterior. Esto es así ya que permite a React tener más control sobre la actualización de la UI y permite unir varios cambios de estado en uno solo, re-dibujando la UI una sola vez.
 
