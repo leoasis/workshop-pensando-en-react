@@ -12,4 +12,6 @@ Este repositorio fue creado con [create-react-app](https://github.com/facebookin
 
 Si bien ahora no lo vas a usar directamente, te recomiendo que utilices esta herramienta en tus proyectos futuros de React. Es la forma más sencilla de utilizar React en tus aplicaciones, y además tiene muchas utilidades que mejoran la productividad al desarrollar, como vas a poder aprovechar en este repo. Cosas tales como mensajes de error directamente en el navegador, o recarga del código sin tener que refrescar el navegador, son ejemplos de lo que obtenemos solamente con utilizar _create-react-app_.
 
+Otra herramienta muy útil es [React Developer Tools](https://github.com/facebook/react-devtools) y podes aprender a usarla leyendo la documentación y viendo los ejemplos del sitio.
+
 Ahora vamos a ver [como crear elementos y dibujarlos](./01-render-y-create-element.md).
