@@ -1,6 +1,6 @@
 # 06 - Listas
 
-Cuando queremos dibujar una lista de elementos, seguramente utilicemos un array de Javascript. Un caso muy común es partir de cierta información y a partir de esa lista de entidades, _mapear_ esa lista a una lista de elementos de React:
+Cuando queremos dibujar una lista de elementos, seguramente utilicemos un array de JavaScript. Un caso muy común es partir de cierta información y a partir de esa lista de entidades, _mapear_ esa lista a una lista de elementos de React:
 
 ```jsx
 const artists = [
