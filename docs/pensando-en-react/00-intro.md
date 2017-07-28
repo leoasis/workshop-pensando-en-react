@@ -1,18 +1,32 @@
 # 00 - Pensando en React - Intro
 
-Bienvenido! En esta serie de pasos vamos a estar viendo cómo armar una aplicación en React.
+Conociendo los fundamentos de React podemos construir nuestra primer aplicación. 
 
-Este workshop está basado en [este link](https://facebook.github.io/react/docs/thinking-in-react.html) de la documentación oficial que describe en forma muy simple y didáctica los pasos que tenemos que hacer para diseñar e implementar una aplicación (o un fragmento dentro de una aplicación) con React.
+Esta parte del workshop está basado en [thinking in react](https://facebook.github.io/react/docs/thinking-in-react.html) de la documentación oficial que describe de forma muy simple y didáctica los pasos que tenemos que hacer para diseñar e implementar una aplicación (o un fragmento dentro de una aplicación) con React.
 
-Vas a ver que es muy simple, y divertido!
+**Vas a ver que es muy simple, y divertido!**
 
-Durante este workshop vamos a armar una aplicación que nos servirá para buscar artistas musicales, e ir armando una lista de artistas favoritos. Vamos a estar accediendo a esos artistas mediante la API de Spotify. Por este motivo, vas a tener que tener una cuenta en Spotify (una cuenta gratuita es suficiente).
+La aplicación que vamos a construir nos servirá para buscar artistas musicales, e ir armando una lista de artistas favoritos. Para poder utilizar la API de Spotify necesitamos tener una cuenta.
 
 Acá te muestro un GIF con la aplicación funcionando:
 
 ![Aplicación funcionando](../assets/00.gif)
 
-Podés acceder a la aplicación final iniciando la aplicación con `npm start` (o `yarn start` si usas `yarn`), y acceder a la url `/final`.
+Para correr el proyecto tenes que ejecutar `npm` o `yarn` start según que módulo uses
+
+Con npm:
+```bash
+npm start
+```
+
+Con yarn:
+```bash
+yarn start
+```
+
+Podés ver la aplicación final ingresando al link `Versión final de la aplicación` del menú principal.
+
+![Menú de la Aplicación](../assets/00-01.png)
 
 La primera vez que intentes buscar un artista, la aplicación te redireccionará a una página para darle permisos a la aplicación para acceder a los datos de Spotify. Por como funciona la API de Spotify, esto lo tendrás que hacer cada cierto tiempo. Igualmente esa funcionalidad ya esta implementada, no nos enfocaremos en hacer eso, sino en la UI y las interacciones.
 
