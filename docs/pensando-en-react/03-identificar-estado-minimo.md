@@ -12,22 +12,23 @@ Para esto tenemos que pensar un poco en cómo va a funcionar nuestra aplicación
 
 En primer lugar, veamos el formulario de búsqueda. Seguramente vamos a tener que saber cuál es el texto por el que busca el usuario, por lo que eso va a ser parte de ese estado, ya que puede modificarse.
 
-[GIF del formulario de busqueda]
+![Formulario de búsqueda](../assets/03-01.gif)
 
 Una vez que comencemos a buscar a los artistas, vamos a tener que identificar ese estado intermedio mientras pedimos los datos y efectivamente los obtenemos como respuesta de la API. En ese momento intermedio vamos a estar mostrando la pantalla de "cargando", o modificar el texto del botón de "cargar más" por "cargando". Para esto necesitamos guardar ese booleano que represente el estado de "cargando datos" o no.
 
-[GIF de busqueda nueva y cargando]
-[GIF de cargar más]
+![Búsqueda nueva y cargando](../assets/03-02.gif)
 
 Debido a que la información que nos devuelve Spotify está paginada, tenemos que saber cuántos artistas hay en total para una consulta determinada, de forma tal de saber si podemos mostrar o no el boton de "cargar más". Esa información también debe ser parte del estado.
 
+![Cargar más](../assets/03-03.gif)
+
 Quizás un detalle un poco sutil, es que la pantalla de "cargando" cuando estamos realizando una nueva búsqueda, muestra los puntos suspensivos usando una animación que va mostrando un punto, luego dos, y luego tres, y luego de nuevo uno, en forma cíclica. Esa información, si bien solo le incumbe a esa parte de nuestra aplicación, también es estado que debemos guardar en algun lado.
 
-[GIF de cargando solamente]
+![Cargando](../assets/03-04.gif)
 
 Por último, vamos a necesitar el listado de artistas seleccionados para por un lado mostrar en la lista de la derecha, y por otro lado mostrarlos más transparentes cuando se muestran en la búsqueda de la izquierda.
 
-[GIF de seleccion de artistas]
+![Selección de artistas](../assets/03-05.gif)
 
 En resumen entonces, tenemos el siguiente estado:
 

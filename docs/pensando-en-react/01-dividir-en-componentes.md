@@ -12,19 +12,20 @@ Veamos como dividiríamos nuestra aplicación.
 
 En primer lugar, vamos a tener un gran componente que encierra toda la UI, y es donde comienza nuestra aplicación:
 
-[Imagen con cuadro de App]
+![Componente App](../assets/01-01.png)
+
 
 Luego podemos dividir nuestra app en dos componentes, el panel de la derecha con el listado de "Mis Artistas", y el componente del lado izquierdo con el contenido principal:
 
-[Imagen con cuadros de paneles]
+![Componentes Paneles](../assets/01-02.png)
 
 Luego, nos enfocamos en el panel de la izquierda. Identificamos dos secciones que manejan distinta información. Por un lado el listado de artistas, y por otro lado el formulario de búsqueda. Los dividimos en componentes:
 
-[Imagen]
+![Componentes formulario y listado](../assets/01-03.png)
 
 Seguimos enfocándonos en el listado de artistas, e identificamos a cada elemento de la lista como su componente, ya que cada uno se encarga de un artista, y podrían ser el mismo componente repetido, ya que la estructura es la misma en cada uno.
 
-[Imagen]
+![Componente Artista](../assets/01-04.png)
 
 Y así podemos seguir partiendo cada fragmento de UI en más y más componentes, hasta donde creamos necesario. El resto de la división es parte del primer paso que tendrás que completar en este workshop. Recordá los estados dinámicos de la aplicación también! Como los estados de "cargando" mientras los artistas se van a buscar a la API, y el estado de "no hay resultados" cuando buscas por algún texto que no corresponde a ningún artista. Finalmente, también está el estado de "cargando" cuando hacemos click en "cargar más" debajo para cargar la siguiente página de datos.
 

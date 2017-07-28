@@ -10,7 +10,7 @@ Durante este workshop vamos a armar una aplicación que nos servirá para buscar
 
 Acá te muestro un GIF con la aplicación funcionando:
 
-[EJEMPLO DE LA APP FUNCIONANDO]
+![Aplicación funcionando](../assets/00.gif)
 
 Podés acceder a la aplicación final iniciando la aplicación con `npm start` (o `yarn start` si usas `yarn`), y acceder a la url `/final`.
 
