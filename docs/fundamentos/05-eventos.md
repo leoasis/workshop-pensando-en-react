@@ -21,7 +21,7 @@ function handleMouseOver(ev) {
   console.log('Se disparó el mouseover!');
 }
 
-const el = <div onMouseOver={handleMouseOver}>Soy un texto</button>
+const el = <div onMouseOver={handleMouseOver}>Soy un texto</div>
 ```
 
 La convención es llamar a las props `on<Algo>` donde ese `Algo` es el evento en cuestión.
