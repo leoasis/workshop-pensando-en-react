@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+
+import { getAbsoluteFilePath } from "./util";
 import Inicio from "./inicio";
 import Final from "./final";
 
@@ -44,6 +46,24 @@ function exNumber(index) {
   return num < 10 ? "0" + num : String(num);
 }
 
+function ExerciseLink({ to, children }) {
+  return (
+    <a
+      style={{ cursor: "pointer" }}
+      onClick={ev => {
+        ev.preventDefault();
+        const href =
+          "/__open-stack-frame-in-editor?fileName=" +
+          window.encodeURIComponent(getAbsoluteFilePath(to)) +
+          "&lineNumber=1";
+        fetch(href);
+      }}
+    >
+      {children}
+    </a>
+  );
+}
+
 function Foundation({ match }) {
   const exercises = [
     exWithDOMElement(Ex1),
@@ -75,8 +95,11 @@ function Foundation({ match }) {
                 }}
               >
                 El archivo que corresponde a este ejercicio es{" "}
-                <b>/src/fundamentos/{exNumber(index)}.js</b>. Abrilo en tu
-                editor de texto.
+                <ExerciseLink to={`/src/fundamentos/${exNumber(index)}.js`}>
+                  <b>
+                    /src/fundamentos/{exNumber(index)}.js
+                  </b>
+                </ExerciseLink>. Abrilo en tu editor de texto.
               </div>
               <div style={{ padding: 10 }}>
                 {Array.isArray(Ex)
