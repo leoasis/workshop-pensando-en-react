@@ -11,6 +11,7 @@ function SpotifyLogo(props) {
   return (
     React.createElement('img', {
       src: "/spotify.svg",
+      alt: 'Spotify Logo',
       width: props.size,
       height: props.size,
       style: { verticalAlign: 'middle' }

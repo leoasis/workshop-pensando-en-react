@@ -15,6 +15,16 @@ import Ex6 from "./fundamentos/06";
 import Ex7 from "./fundamentos/07";
 import Ex8 from "./fundamentos/08";
 import Ex9 from "./fundamentos/09";
+
+import Ex1Sol from "./fundamentos/soluciones/01";
+import Ex2Sol from "./fundamentos/soluciones/02";
+import Ex3Sol from "./fundamentos/soluciones/03";
+import { ejercicio4A as ejercicio4ASol, ejercicio4B as ejercicio4BSol } from "./fundamentos/soluciones/04";
+import Ex5Sol from "./fundamentos/soluciones/05";
+import Ex6Sol from "./fundamentos/soluciones/06";
+import Ex7Sol from "./fundamentos/soluciones/07";
+import Ex8Sol from "./fundamentos/soluciones/08";
+import Ex9Sol from "./fundamentos/soluciones/09";
 // import registerServiceWorker from "./registerServiceWorker";
 import "normalize.css";
 import "./index.css";
@@ -54,8 +64,7 @@ function ExerciseLink({ to, children }) {
         ev.preventDefault();
         const href =
           "/__open-stack-frame-in-editor?fileName=" +
-          window.encodeURIComponent(getAbsoluteFilePath(to)) +
-          "&lineNumber=1";
+          window.encodeURIComponent(getAbsoluteFilePath(to));
         fetch(href);
       }}
     >
@@ -66,23 +75,24 @@ function ExerciseLink({ to, children }) {
 
 function Foundation({ match }) {
   const exercises = [
-    exWithDOMElement(Ex1),
-    Ex2,
-    Ex3,
-    [exWithDOMElement(ejercicio4A), ejercicio4B],
-    Ex5,
-    Ex6,
-    Ex7,
-    Ex8,
-    Ex9
+    [exWithDOMElement(Ex1), exWithDOMElement(Ex1Sol)],
+    [Ex2, Ex2Sol],
+    [Ex3, Ex3Sol],
+    [[exWithDOMElement(ejercicio4A), ejercicio4B], [exWithDOMElement(ejercicio4ASol), ejercicio4BSol]],
+    [Ex5, Ex5Sol],
+    [Ex6, Ex6Sol],
+    [Ex7, Ex7Sol],
+    [Ex8, Ex8Sol],
+    [Ex9, Ex9Sol]
   ];
 
   return (
     <Switch>
-      {exercises.map((Ex, index) =>
+      {exercises.map(([Ex, Sol], index) => [
         <Route
-          key={index}
+          key={0}
           path={`/fundamentos/${index + 1}`}
+          exact
           render={props =>
             <div>
               <div
@@ -107,8 +117,36 @@ function Foundation({ match }) {
                   : <Ex {...props} />}
               </div>
             </div>}
+        />,
+        <Route
+          key={1}
+          path={`/fundamentos/${index + 1}/solucion`}
+          render={props =>
+            <div>
+              <div
+                style={{
+                  background: "#e0e0e0",
+                  padding: 10,
+                  fontSize: ".8em",
+                  marginBottom: 5,
+                  fontStyle: "italic"
+                }}
+              >
+                El archivo que corresponde a esta solución del ejercicio es{" "}
+                <ExerciseLink to={`/src/fundamentos/soluciones/${exNumber(index)}.js`}>
+                  <b>
+                    /src/fundamentos/soluciones/{exNumber(index)}.js
+                  </b>
+                </ExerciseLink>. Abrilo en tu editor de texto.
+              </div>
+              <div style={{ padding: 10 }}>
+                {Array.isArray(Sol)
+                  ? Sol.map((Sol, index) => <Sol key={index} {...props} />)
+                  : <Sol {...props} />}
+              </div>
+            </div>}
         />
-      )}
+      ])}
       <Route
         render={() =>
           <div className="root">
@@ -118,6 +156,15 @@ function Foundation({ match }) {
                 <li key={index}>
                   <Link to={`/fundamentos/${index + 1}`}>
                     Ejercicio {index + 1}
+                  </Link>{" "}
+                  <Link to={`/fundamentos/${index + 1}/solucion`}>
+                    <span
+                      role="img"
+                      aria-label="solución"
+                      style={{ fontSize: ".6em", fontStyle: "italic", color: '#a0a0a0' }}
+                    >
+                      (👀 solución)
+                    </span>
                   </Link>
                 </li>
               )}
