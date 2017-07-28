@@ -7,7 +7,7 @@ import Final from "./final";
 import Ex1 from "./fundamentos/01";
 import Ex2 from "./fundamentos/02";
 import Ex3 from "./fundamentos/03";
-import Ex4 from "./fundamentos/04";
+import { ejercicio4A, ejercicio4B} from "./fundamentos/04";
 import Ex5 from "./fundamentos/05";
 import Ex6 from "./fundamentos/06";
 import Ex7 from "./fundamentos/07";
@@ -49,7 +49,7 @@ function Foundation({ match }) {
     exWithDOMElement(Ex1),
     Ex2,
     Ex3,
-    Ex4,
+    [exWithDOMElement(ejercicio4A), ejercicio4B],
     Ex5,
     Ex6,
     Ex7,
@@ -79,7 +79,9 @@ function Foundation({ match }) {
                 editor de texto.
               </div>
               <div style={{ padding: 10 }}>
-                <Ex {...props} />
+                {Array.isArray(Ex) ? Ex.map((Ex, index) => (
+                  <Ex key={index} {...props} />
+                )): <Ex {...props} />}
               </div>
             </div>}
         />
