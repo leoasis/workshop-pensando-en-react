@@ -18,7 +18,7 @@ class Formulario extends React.Component {
             el.focus();
           }
         }} />
-        <button type="submit">Enviar</submit>
+        <button type="submit">Enviar</button>
       </form>
     )
   }
@@ -45,7 +45,7 @@ class Formulario extends React.Component {
         <input type="text" ref={(el) => {
           this.inputEl = el;
         }} />
-        <button type="submit">Enviar</submit>
+        <button type="submit">Enviar</button>
       </form>
     )
   }
@@ -86,7 +86,7 @@ class Formulario extends React.Component {
         <CampoTexto ref={(el) => {
           this.campoTextoEl = el;
         }} />
-        <button type="submit">Enviar</submit>
+        <button type="submit">Enviar</button>
       </form>
     )
   }
