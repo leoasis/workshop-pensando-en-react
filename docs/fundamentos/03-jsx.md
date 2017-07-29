@@ -7,7 +7,7 @@ Este ejemplo:
 ```js
 const el = React.createElement('div', { className: 'main' },
   React.createElement('p', null, 'Haz click en el botón de abajo.'),
-  React.createElement(Button, { color: 'blue', size: 10 }, 'Click!')
+  React.createElement(MyButton, { color: 'blue', size: 10 }, 'Click!')
 )
 ```
 
@@ -17,9 +17,9 @@ Se escribe así en JSX:
 const el = (
   <div className="main">
     <p>Haz click en el botón de abajo.</p>
-    <Button color="blue" size={10}>
+    <MyButton color="blue" size={10}>
       Click
-    </Button>
+    </MyButton>
   </div>
 )
 ```
