@@ -9,7 +9,7 @@
 // 2. Hacer click en algunos artistas para seleccionarlos, y reordenar con el botón.
 //    Observar qué pasa. Eliminar el primer elemento y observar qué pasa.
 // 3. Utilizar esta vez `Math.random()` como `key`, y repetir el paso 2.
-// 4. Utilizar esta vez el id del artista `artists.id` como `key`. Repetir el paso 2.
+// 4. Utilizar esta vez el id del artista `artist.id` como `key`. Repetir el paso 2.
 
 import React from "react";
 
