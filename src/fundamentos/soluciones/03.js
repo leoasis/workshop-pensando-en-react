@@ -38,7 +38,7 @@ class Artist extends React.Component {
     return (
       <div className="artist">
         <ArtistImage size={200} url={this.props.artist.imageUrl} />
-        <span className="artistName">this.props.artist.name</span>
+        <span className="artistName">{this.props.artist.name}</span>
         <span>
           {this.props.artist.followers} Seguidores · {this.props.artist.genres}{" "}
           ·{" "}
