@@ -42,7 +42,7 @@ ReactDOM.render(el, container);
 ```js
 import React from 'react';
 
-const el = React.createElement('div', { style: { backgroundColor: 'green' },
+const el = React.createElement('div', { style: { backgroundColor: 'green' }},
   React.createElement('h1', { title: 'Saludo al mundo' }, 'Hola mundo!'),
   React.createElement('p', null,
     'Esto es un ejemplo',
