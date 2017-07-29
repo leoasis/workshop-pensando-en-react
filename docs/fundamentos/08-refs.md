@@ -1,12 +1,12 @@
 # 08 - Refs
 
-Mientras nos mantengamos en el mundo de React, vamos a poder abstraernos de las complicaciones del DOM, y vamos a poder razonar sobre nuestra aplicación más fácil, con las reglas y restricciones que su modelo de componentes nos da. Sin embargo, sabemos que el mundo no es ideal, y hay situaciones donde tenemos que tener una forma de acceder al DOM para realizar acciones de forma imperativa.
+Mientras nos mantengamos en el mundo de React, vamos a poder abstraernos de las complicaciones del DOM, y vamos a poder razonar sobre nuestra aplicación más fácil, con las reglas y restricciones que su modelo de componentes nos da. Sin embargo, sabemos que el mundo no es ideal, y hay situaciones donde tenemos que tener una forma de acceder al DOM para realizar acciones de forma imperativa, o incluso para utilizar alguna librería que ya funciona con el DOM directamente, y no queremos reescribirla en React.
 
-Por suerte, React nos da una forma para acceder a esos elementos, y hacer el trabajo sucio nosotros mismos. La forma que tiene es utilizando lo que llama `ref`s.
+Por suerte, React nos da una forma para acceder a esos elementos, para poder hacer el trabajo sucio. La forma que tiene es utilizando lo que llama `ref`s.
 
 Así como las `key`, `ref` es una prop "especial" que se le asigna a los elementos de React, pero que no se pueden acceder desde las props que recibe el componente.
 
-Veamos un ejemplo. Supongamos que queremos acceder a un input para hacerle foco cuando el componente que estamos creando se monta (podríamos hacerlo con el atributo `autoFocus` que ya tiene el DOM, pero esto es a modo ilustrativo).
+Veamos un ejemplo. Supongamos que queremos acceder a un input para hacerle foco cuando el componente que estamos creando se monta (podríamos hacerlo con el atributo `autoFocus` que ya tiene el DOM, pero esto es a modo ilustrativo):
 
 ```jsx
 class Formulario extends React.Component {
@@ -27,9 +27,9 @@ class Formulario extends React.Component {
 
 Ahi podemos ver el uso de `ref`. El valor de la prop debe ser una función. Esta función recibe como parámetro el elemento de DOM que es representado por este elemento de React.
 
-Tenemos que asegurarnos que el parámetro no sea `null`, por eso usamos el `if`. React nos enviará el elemento cuando éste se monte, y nos enviará `null` cuando se desmonte. Esto nos sirve para eliminar la referencia si la utilizamos en algun lado o la guardamos en memoria.
+Tenemos que asegurarnos que el parámetro no sea `null`, por eso usamos el `if`. React nos enviará el elemento cuando éste se monte, y nos enviará `null` cuando se desmonte. Esto nos sirve para eliminar la referencia si la utilizamos en algun lado como una variable de instancia.
 
-Una vez que tenemos el elemento, podemos utilizarlo como queramos, en particular ahí, llamamos al método `focus()` del `input`, que es un método nativo del DOM.
+Una vez que tenemos el elemento, podemos utilizarlo como queramos. En particular en el ejemplo anterior, llamamos al método `focus()` del `input`, que es un método nativo del DOM.
 
 En general se guarda el elemento como variable de instancia, para poder ser utilizado en eventos del ciclo de vida, o eventos de algún componente:
 

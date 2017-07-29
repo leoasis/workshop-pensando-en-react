@@ -4,7 +4,7 @@ Hasta ahora sabemos crear elementos que se corresponden con los elementos de DOM
 
 Pero en realidad no te expliqué todo cuando hablamos de el primer parámetro en `React.createElement`. En realidad, React permite no sólo un parametro `string` ahí, sino que también permite que le pasemos un _componente_.
 
-Un componente es la forma que tenemos en React de crear nuestros propios bloques de UI. Una aplicación hecha con React consta de la composición de muchos componentes formando un árbol que comienza con un componente raíz, y llega hasta los componentes hoja que son los que representan los elementos de DOM. Salvo estos últimos, todos los demás son componentes que creamos nosotros (u obtenemos de alguna librería externa).
+Un componente es la forma que tenemos en React de crear nuestros propios bloques de UI. Una aplicación hecha con React consta de la composición de muchos componentes formando un árbol que comienza con un componente raíz, y llega hasta los componentes hoja que son los que representan los elementos de DOM. Nuestra aplicación termina siendo una combinación de componentes que representan al DOM y componentes "compuestos", que internamente se componen de uno o más componentes de alguno de estos dos tipos.
 
 Ahora, cómo definimos un componente? Una forma es definiendo una función, que devuelve como valor de retorno un elemento de React:
 
@@ -49,7 +49,7 @@ Cuando definimos nuestros propios componentes, tenemos acceso a esos parámetros
 React.createElement(HolaMundo, { mundo: 'Marte' });
 ```
 
-Incluso no necesariamente tienen que ser de tipo string, sino que pueden ser del tipo que queramos, como números, objetos, listas, o fechas:
+Incluso no necesariamente tienen que ser de tipo string, sino que pueden ser del tipo que queramos, como números, objetos, listas, otros elementos de React, elementos del DOM, funciones, fechas, lo que se nos ocurra!:
 
 ```js
 React.createElement(HolaMundo, { mundo: 'Marte', fecha: new Date() });
@@ -67,7 +67,7 @@ function HelloWorld(props) {
 }
 ```
 
-Es decir, que las props las vamos a recibir como un objeto en el primer argumento de la función, y accedemos a cada una de las props accediendo a las propiedades de ese objeto props. Por ejemplo, para acceder al valor que pasamos en `{ mundo: 'Marte', fecha: new Date() }` al crear el elemento, debemos utilizar `props.mundo` y `props.fecha` respectivamente.
+Es decir, que las props las vamos a recibir como un objeto en el primer argumento de la función, y accedemos a cada una de las props accediendo a las propiedades de ese objeto. Por ejemplo, para acceder a los valores que pasamos en `{ mundo: 'Marte', fecha: new Date() }` al crear el elemento, debemos utilizar `props.mundo` y `props.fecha` respectivamente.
 
 Un detalle importante en React, es que las props deben ser tratadas como inmutables, es decir, NO podemos modificarlas asignandoles nuevos valores en sus propiedades, o asignando nuevas propiedades o eliminando alguna ya existente. El objeto `props` debe ser tratado como de sólo lectura. Si no lo hacemos, React nos mostrará un error, y el funcionamiento de React dejará de ser el esperado.
 

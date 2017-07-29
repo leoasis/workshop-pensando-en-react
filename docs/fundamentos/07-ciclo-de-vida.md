@@ -12,7 +12,7 @@ Hay varios eventos a los cuales nos podemos suscribir. Te recomiendo que leas [l
 
 De nuevo, los componentes que tienen acceso a esta funcionalidad son los componentes de tipo clase. La forma de suscribirnos a los eventos es simplemente definiendo el método especifico para ese evento dentro de la clase.
 
-Ahora si, vamos a ver los más útiles:
+Veamos los eventos más útiles:
 
 ## componentDidMount
 
@@ -24,9 +24,9 @@ class MiComponente extends React.Component {
 }
 ```
 
-Se dispara cuando el componente ya fue montado en la UI. En este momento el componente ya esta renderizado, y todos los elementos de DOM que lo component ya se encuentran agregados al DOM. Por eso, este evento es útil para cualquier inicialización que requiera el DOM.
+Se dispara cuando el componente ya fue montado en la UI. En este momento el componente ya esta dibujado, y todos los elementos de DOM que lo componen ya se encuentran agregados al DOM. Por eso, este evento es útil para cualquier inicialización que requiera el DOM (en el siguiente fundamento veremos como acceder al DOM en un componente de React).
 
-También es útil este evento para comenzar llamadas para buscar datos requeridos por este componente por AJAX o algún otro mecanismo.
+También es útil este evento para comenzar llamadas para buscar datos por AJAX o algún otro mecanismo, como `localStorage`.
 
 ## componentWillReceiveProps
 
@@ -42,7 +42,7 @@ Se llama cada vez que el componente es re-renderizado porque el componente padre
 
 Es importante aclarar que las nuevas props no necesariamente son _distintas_. Si el componente padre se redibuja pero envía los mismos valores de props, este evento se llamará de todas formas. Es tarea nuestra hacer los chequeos para ver si alguna prop cambió o no en este evento.
 
-Este evento es util para modificar el estado interno con `setState` a partir de las props que se reciben.
+Este evento es útil para modificar el estado interno con `setState` a partir de las props que se reciben.
 
 ## shouldComponentUpdate
 
@@ -56,7 +56,22 @@ class MiComponente extends React.Component {
 
 No es técnicamente un evento, sino una forma que tenemos de indicar que no hace falta que se redibuje un componente. Podemos tener nuestra propia lógica para decir que no queremos redibujar el componente en base a las props y state actuales (que están en `this.props` y `this.state` respectivamente), y las siguientes (en `nextProps` y `nextState`). Debemos devolver un booleano indicando si queremos actualizar el componente o no.
 
-Un uso común es hacer una comparación superficial de las `props` y `state` con las próximas, comparando por igualdad propiedad a propiedad. De hecho, este caso es tan común que React ofrece una forma más corta de hacer lo mismo, y es heredar de `React.PureComponent` en lugar de `React.Component`.
+Un uso común es hacer una comparación superficial de las `props` y `state` con las próximas, comparando por igualdad propiedad a propiedad. De hecho, este caso es tan común que React ofrece una forma más corta de hacer lo mismo, y es heredar de `React.PureComponent` en lugar de `React.Component`. Es decir que esto:
+
+```jsx
+class MiComponente extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowEqual(this.props, nextProps) && shallowEqual(this.state, nextState);
+  }
+}
+```
+
+Es equivalente a:
+
+```jsx
+class MiComponente extends React.PureComponent {
+}
+```
 
 ## componentDidUpdate
 
@@ -84,7 +99,7 @@ class MiComponente extends React.Component {
 }
 ```
 
-Se dispara cuando el componente se está por quitar de la UI. Es útil para "limpiar lo que ensuciamos". Si agregamos event listeners o llamadas a `setTimeout` o `setInterval`, es eliminar esos listeners y llamar a `clearTimeout` o `clearInterval`. También aquí deberíamos cancelar las llamadas remotas que aún no hayan terminado.
+Se dispara cuando el componente se está por quitar de la UI. Es útil para "limpiar lo que ensuciamos". Si agregamos event listeners o llamadas a `setTimeout` o `setInterval` en algún otro lado del componente, corresponde en este evento eliminar esos listeners y llamar a `clearTimeout` o `clearInterval`. También aquí deberíamos cancelar (o hacer que se ignoren) las llamadas remotas que aún no hayan terminado.
 
 Si utilizamos algun plugin de jQuery o alguna librería que utiliza el DOM y requiere liberar recursos, aquí debe ser llamada.
 
