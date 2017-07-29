@@ -1,6 +1,6 @@
 # 03 - JSX
 
-Hasta ahora estuvimos creando elementos usando la función `React.createElement`. Seguramente ya estes pensando algo del tipo "Cómo les gusta escribir a los de React", o "No hay una forma más corta de hacer eso?", o "Qué ganas de comer una buena hamburguesa". Si estás pensando algo parecido a las primeras dos, este capítulo viene a contarte que existe otra forma de hacer eso mismo, con algo llamado JSX. JSX es una extensión al lenguaje JavaScript que permite escribir elementos de React de una forma más concisa y familiar. La sintaxis es muy similar a escribir HTML.
+Hasta ahora estuvimos creando elementos usando la función `React.createElement`. Seguramente ya estes pensando algo del tipo "Cómo les gusta escribir a los de React", o "No hay una forma más corta de hacer eso?", o "Qué ganas de comer una buena 🍔". Si estás pensando algo parecido a las primeras dos, este capítulo viene a contarte que existe otra forma de hacer eso mismo, con algo llamado JSX. JSX es una extensión al lenguaje JavaScript que permite escribir elementos de React de una forma más concisa y familiar. La sintaxis es muy similar a escribir HTML.
 
 Este ejemplo:
 
