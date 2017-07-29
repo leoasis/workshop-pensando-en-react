@@ -58,7 +58,7 @@ React.createElement(HolaMundo, { mundo: 'Marte', fecha: new Date() });
 La forma de acceder a esos parámetros es a traves del primer argumento de la función que define al componente:
 
 ```js
-function HelloWorld(props) {
+function HolaMundo(props) {
   // Obtengo el mundo que me pasaron como prop, sino 'mundo' por default.
   const mundo = props.mundo || 'mundo';
   return React.createElement('h1', null,
@@ -78,7 +78,7 @@ Esta limitación es útil para el mecanismo interno de React para actualizar la 
 Existe otra forma de crear componentes, y es mediante el uso de las clases. Un componente equivalente al anterior utilizando clases sería así:
 
 ```js
-class HelloWorld extends React.Component {
+class HolaMundo extends React.Component {
   render() {
     // Obtengo el mundo que me pasaron como prop, sino 'mundo' por default.
     const mundo = this.props.mundo || 'mundo';
