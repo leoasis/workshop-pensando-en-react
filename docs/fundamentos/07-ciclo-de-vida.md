@@ -73,6 +73,8 @@ class MiComponente extends React.PureComponent {
 }
 ```
 
+En este momento es útil recordar el problema que vimos en el [fundamento 5](./05-eventos.md#evitando-crear-funciones-en-el-render). Si creamos nuevas funciones y las pasamos como props, esta función que compara todas las props y state con las siguientes no nos servirá de mucho, ya que siempre nos dirá que cambiaron (porque las funciones son siempre nuevas, por ende distintas). Por eso es importante evitar crear nuevas funciones si efectivamente no cambia la lógica que se hace internamente, sobre todo para poder aplicar esta optimización en los componentes que veamos que están redibujándose innecesariamente.
+
 ## componentDidUpdate
 
 ```jsx

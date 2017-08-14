@@ -55,6 +55,105 @@ Aquí definimos un "evento" `onSelect` que se dispara cuando se hace click en el
 
 Para saber con más detalle qué eventos tenemos disponibles en React, te recomiendo que [la documentación oficial que habla sobre los eventos](https://facebook.github.io/react/docs/events.html).
 
+## Evitando crear funciones en el render
+
+Veamos este ejemplo:
+
+```jsx
+class Counter {
+  constructor() {
+    super();
+
+    this.state = { counter: 0 };
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={() => this.setState(state => ({ counter: state.counter + 1 }))}>
+          Increment
+        </button>
+        {this.state.counter}
+      </div>
+    );
+  }
+
+}
+```
+
+Si observamos con atención, vemos que cada vez que este componente se dibuje, vamos a estar creando una _nueva_ función que asignamos a la prop `onClick` del `button`. Esta creación de funciones innecesaria es un problema de performance. No se nota demasiado en aplicaciones pequeñas, e incluso tampoco en aplicaciones grandes si no se redibujan con mucha frecuencia. Aún así, es muy simple de evitar, y conviene hacerlo cuando se pueda. Al menos, es interesante saber cómo hacerlo para cuando empecemos a analizar por qué nuestra aplicación no tiene la performance deseada y descubramos que éste es el problema.
+
+> Crear nuevas funciones y pasarlas por props cada vez que redibujamos un componente, tiene otra consecuencia. Existe un método para evitar que un componente se vuelva a dibujar cuando sabemos que sus props no cambiaron, como una mejora de performance. Esto se verá más en detalle cuando se vean los eventos del ciclo de vida en el [fundamento 7](./07-ciclo-de-vida.md). El problema de crear funciones nuevas cada vez, es que hace que este método no nos sirva, ya que si estamos pasando nuevas funciones cada vez por props, las props siempre cambiarán y no vamos a poder evitar que se redibuje el componente, cuando en realidad la función hace lo mismo que antes, solo que creamos una nueva función que hace lo mismo.
+
+Lo que deberíamos hacer es evitar crear una función cada vez que dibujamos el componente. Para esto, necesitamos guardar esta función dentro de la clase y utilizarla en el `render`. Para esto utilizamos el constructor, que es cuando se construye la instancia del componente:
+
+```jsx
+class Counter {
+  constructor() {
+    super();
+
+    this.state = { counter: 0 };
+
+    this.handleClick = () => this.setState(state => ({ counter: state.counter + 1 }));
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>
+          Increment
+        </button>
+        {this.state.counter}
+      </div>
+    );
+  }
+
+}
+```
+
+Sin embargo, si guardamos todas las funciones en el constructor, éste puede tornarse muy largo y difícil de leer. Es por esto que más comunmente se utilizan los métodos de la clase. Igualmente en el constructor debemos asociar el `this` del método con la instancia explícitamente:
+
+```jsx
+class Counter {
+  constructor() {
+    super();
+
+    this.state = { counter: 0 };
+
+    // Pisamos la referencia de `handleClick` con el
+    // método `handleClick` explícitamente asociado a
+    // `this`, que aquí en el constructor se refiere
+    // a la instancia del componente.
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    // Como hicimos `.bind(this)` allí arriba 👆,
+    // Este `this` será la instancia del componente.
+    // Si no hacemos el bind de arriba, este `this`
+    // dependerá de cómo se llame esta función cuando la pasemos
+    // por `props` al `button` debajo 👇, pero NO será
+    // la instancia de este componente, que es lo que
+    // queremos.
+    this.setState(state => ({ counter: state.counter + 1 }));
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>
+          Increment
+        </button>
+        {this.state.counter}
+      </div>
+    );
+  }
+
+}
+```
+
+Quizás todo esto explicado en esta sección te pueda resultar un poco complejo, pero básicamente es entender [cómo funciona el `this` en JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this). Si aún no entendés por completo, no te preocupes! La mejor forma de aprender esto es toparte con el problema, identificarlo y solucionarlo. Espero que al menos esto te sirva para poder identificar el problema más rápido!
+
 ## Ejercicios
 
 Ya estás listo para hacer [el ejercicio 5](http://localhost:3000/fundamentos/5).
